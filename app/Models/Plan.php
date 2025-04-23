@@ -15,4 +15,9 @@ class Plan extends Model
         'price',
         'description',
     ];
+
+    public function signatures(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Signature::class);
+    }
 }

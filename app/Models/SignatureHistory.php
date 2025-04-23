@@ -19,4 +19,9 @@ class SignatureHistory extends Model
     protected $casts = [
         'old_status' => SignatureStatus::class,
     ];
+
+    public function signature(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Signature::class);
+    }
 }

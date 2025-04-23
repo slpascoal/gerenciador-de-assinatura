@@ -20,4 +20,9 @@ class Transaction extends Model
     protected $casts = [
         'status' => TransactionStatus::class,
     ];
+
+    public function signature(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Signature::class);
+    }
 }

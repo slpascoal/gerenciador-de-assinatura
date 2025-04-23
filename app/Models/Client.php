@@ -19,4 +19,14 @@ class Client extends Model
     protected $casts = [
         'birthday' => 'datetime',
     ];
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function signatures(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Signature::class);
+    }
 }
